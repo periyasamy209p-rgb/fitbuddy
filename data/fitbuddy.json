@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 101,
+      "name": "Shreya Patel",
+      "age": 22,
+      "weight": 55,
+      "goal": "Muscle gain & core strength",
+      "intensity": "high",
+      "schedule": 7,
+      "created_at": "2026-09-29T02:34:00.813Z"
+    },
+    {
+      "id": 102,
+      "name": "Marcus Vance",
+      "age": 29,
+      "weight": 78.5,
+      "goal": "Weight loss & athletic endurance",
+      "intensity": "medium",
+      "schedule": 7,
+      "created_at": "2026-09-30T02:34:00.814Z"
+    }
+  ],
+  "plans": [
+    {
+      "user_id": 101,
+      "original_plan": "## 7-Day Muscle Gain & Core Strength Plan (High Intensity)\n\nThis high-intensity protocol utilizes a structured push-pull-legs and core split strategically placed for maximal hypertrophy and recovery.\n\n### Day 1: Upper Body Push & Core\n- Warm-up (8 mins): Arm circles, cat-cow stretch, 2 mins jump rope, band pull-aparts\n- Main Workout:\n  * Incline Dumbbell Bench Press: 4 sets of 8-10 reps (75s rest)\n  * Barbell Overhead Shoulder Press: 3 sets of 8-10 reps (90s rest)\n  * Dips (weighted if able): 3 sets of 10-12 reps\n  * Cable Triceps Pushdowns: 3 sets of 12-15 reps\n  * Hanging Leg Raises: 3 sets of 12 reps\n- Cooldown (5 mins): Overhead triceps and chest doorway stretch.\n\n### Day 2: Lower Body Quad & Calves Focus\n- Warm-up (7 mins): Bodyweight squats, hip openers, dynamic walking lunges\n- Main Workout:\n  * Barbell Back Squats: 4 sets of 6-8 reps (2 mins rest)\n  * Romanian Deadlifts: 3 sets of 8-10 reps\n  * Bulgarian Split Squats: 3 sets of 10 reps per leg\n  * Standing Calf Raises: 4 sets of 15 reps\n- Cooldown (5 mins): Quad foam rolling and hamstring static stretch.\n\n### Day 3: Active Recovery & Mobility\n- Warm-up (5 mins): Diaphragmatic breathing and cat-camel\n- Main Session:\n  * 30 mins brisk zone 2 incline walk\n  * 20 mins thoracic spine and hip mobility routine\n- Cooldown: Light full-body stretch and hydration.\n\n### Day 4: Upper Body Pull & Rear Delts\n- Warm-up (8 mins): Band face-pulls, arm swings, wrist mobility\n- Main Workout:\n  * Wide-Grip Lat Pulldowns / Pull-Ups: 4 sets of 8-10 reps\n  * Barbell Bent-Over Rows: 4 sets of 8 reps\n  * Incline Dumbbell Hammer Curls: 3 sets of 10-12 reps\n  * Face Pulls with Rope: 4 sets of 15 reps\n  * Cable Woodchoppers: 3 sets of 15 reps per side\n- Cooldown (5 mins): Lat stretch and foam roll upper back.\n\n### Day 5: Lower Body Posterior Chain Focus\n- Warm-up (8 mins): Glute bridges, high knees, leg swings\n- Main Workout:\n  * Conventional or Trap Bar Deadlift: 3 sets of 5 reps\n  * Barbell Hip Thrusts: 4 sets of 10-12 reps\n  * Leg Press (feet high on platform): 3 sets of 12 reps\n  * Lying Leg Curls: 3 sets of 12 reps\n- Cooldown (5 mins): Pigeon pose and hip flexor kneeling stretch.\n\n### Day 6: Total Body Athletic Conditioning & Core\n- Warm-up (6 mins): Shadow boxing, jumping jacks, inchworms\n- Main Workout:\n  * Kettlebell Swings: 4 sets of 15 reps\n  * Dumbbell Push Press: 3 sets of 10 reps\n  * Farmer's Walk: 4 sets of 40 meters\n  * Ab Wheel Rollouts: 3 sets of 10 reps\n  * Plank to Push-Up: 3 sets of 45 seconds\n- Cooldown (5 mins): Deep child's pose and cobra stretch.\n\n### Day 7: Complete Rest & Nutritional Reset\n- Active rest: Gentle 20-minute nature stroll. Prioritize 8+ hours deep sleep and hydration.",
+      "updated_plan": "## 7-Day Muscle Gain & Core Strength Plan (Updated: Added Yoga & Reduced Spinal Loading)\n\nBased on user feedback: Added dedicated yoga flow transitions and replaced heavy compressive barbell squats with joint-friendly dumbbell variations.\n\n### Day 1: Upper Body Push & Deep Core\n- Warm-up (8 mins): Arm swings, band dislocations, wrist mobility\n- Main Workout:\n  * Incline Dumbbell Bench Press: 4 sets of 8-10 reps\n  * Neutral Grip Dumbbell Shoulder Press: 3 sets of 10 reps (elbow-friendly)\n  * Cable Chest Flyes: 3 sets of 12 reps\n  * Triceps Overhead Cable Extension: 3 sets of 12-15 reps\n  * V-Ups & Deadbugs: 3 sets of 12 reps each\n- Cooldown (7 mins): 10 minutes of restorative chest-opening yoga poses (Cobra, Puppy Pose).\n\n### Day 2: Lower Body Quad & Glute Hypertrophy (Joint-Friendly)\n- Warm-up (8 mins): 90/90 hip flow, bodyweight lunges\n- Main Workout:\n  * Goblet Squats with elevated heels: 4 sets of 10-12 reps\n  * Dumbbell Romanian Deadlifts: 3 sets of 10-12 reps\n  * Bulgarian Split Squats (supported): 3 sets of 10 reps/leg\n  * Seated Calf Raises: 3 sets of 15 reps\n- Cooldown (8 mins): Pigeon pose and low lunge hip flexor release.\n\n### Day 3: Vinyasa Yoga & Active Regeneration\n- 40 mins restorative Vinyasa yoga focusing on spinal decompression, hip mobility, and mindful breathing.\n- 15 mins cold-hot contrast recovery or gentle walk.\n\n### Day 4: Upper Body Pull & Posterior Delts\n- Warm-up (8 mins): Band pull-aparts, thoracic rotations\n- Main Workout:\n  * Chest-Supported T-Bar Row: 4 sets of 10 reps\n  * Neutral Grip Pull-Ups / Lat Pulldown: 3 sets of 10 reps\n  * Incline Bicep Curls: 3 sets of 12 reps\n  * Rear Delt Dumbbell Flyes: 4 sets of 15 reps\n- Cooldown (5 mins): Child's pose with lat reach.\n\n### Day 5: Glutes & Hamstrings Core Integration\n- Warm-up (8 mins): Glute bridges, monster walks with mini band\n- Main Workout:\n  * Barbell Hip Thrust: 4 sets of 10-12 reps\n  * Swiss Ball Hamstring Curls: 3 sets of 15 reps\n  * Walking Dumbbell Lunges: 3 sets of 12 steps/leg\n  * Hanging Knee Raises: 3 sets of 15 reps\n- Cooldown (8 mins): Happy baby pose and supine spinal twists.\n\n### Day 6: Athletic Power & Flow Conditioning\n- Warm-up (6 mins): Flow movement warm-up\n- Main Workout:\n  * Kettlebell Swings: 4 sets of 15 reps\n  * Dumbbell Clean and Press: 3 sets of 8 reps\n  * Turkish Get-Ups: 3 sets of 3 reps per side (superb for core and shoulders)\n  * Side Planks with rotation: 3 sets of 30s/side\n- Cooldown: Gentle restorative stretch.\n\n### Day 7: Complete Rest & Muscle Recovery\n- Sleep 8-9 hours, optimize protein intake, gentle outdoor walk.",
+      "nutrition_tip": "Prioritize 1.6–2.0g of high-bioavailability protein per kg of body weight (approx 90–110g for 55kg). Consuming 25–30g protein with 40g complex carbs within 60 minutes post-training dramatically accelerates muscle protein synthesis and glycogen replenishment.",
+      "feedback_history": [
+        {
+          "feedback": "Add yoga sessions and use exercises that are easier on the lower back/spine.",
+          "timestamp": "2026-09-30T14:34:00.814Z"
+        }
+      ],
+      "created_at": "2026-09-29T02:34:00.814Z",
+      "updated_at": "2026-09-30T14:34:00.814Z"
+    },
+    {
+      "user_id": 102,
+      "original_plan": "## 7-Day Weight Loss & Athletic Endurance Plan (Medium Intensity)\n\nEngineered for metabolic conditioning, continuous caloric expenditure, and cardiovascular resilience without burnout.\n\n### Day 1: Full-Body Functional Circuit\n- Warm-up (6 mins): 3 mins jumping rope, arm circles, high knees\n- Main Circuit (3 rounds, 60s rest between rounds):\n  * Dumbbell Thrusters: 12 reps\n  * Kettlebell Deadlifts: 15 reps\n  * Push-ups (standard or incline): 12 reps\n  * Mountain Climbers: 40 seconds\n  * Row Machine or Bike Sprint: 500m / 90 seconds\n- Cooldown (5 mins): Calves, hamstrings, and shoulder stretches.\n\n### Day 2: Aerobic Base (Zone 2 Conditioning)\n- 40 mins steady-state jog, rowing, or cycling at conversational heart rate (Zone 2, ~65-75% max HR).\n- 10 mins core plank circuit (plank, side plank 30s each x 3).\n\n### Day 3: Lower Body Strength & Agility\n- Warm-up (7 mins): Leg swings, glute bridges, ankle circles\n- Main Workout:\n  * Goblet Squats: 3 sets of 12-15 reps\n  * Step-Ups with Dumbbells: 3 sets of 10 reps/leg\n  * Kettlebell Swings: 4 sets of 20 reps\n  * Jump Squats: 3 sets of 10 reps\n- Cooldown (5 mins): Quad and hip flexor stretches.\n\n### Day 4: Active Recovery & Gentle Walk\n- 45 mins brisk outdoor walk or leisurely swim. Focus on deep diaphragmatic breathing.\n\n### Day 5: Upper Body & HIIT Cardio Finish\n- Warm-up (6 mins): Dynamic upper body mobility\n- Main Workout:\n  * Dumbbell Flat Bench Press: 3 sets of 12 reps\n  * Dumbbell Bent-Over Row: 3 sets of 12 reps\n  * Overhead Dumbbell Press: 3 sets of 12 reps\n  * HIIT Finisher: 8 rounds of 20s sprint / 40s walk on treadmill or air bike.\n- Cooldown (5 mins): Doorway stretch and arm across chest.\n\n### Day 6: Core Engine & Agility Ladder\n- Warm-up (5 mins): Jumping jacks, lateral lunges\n- Main Circuit:\n  * Russian Twists: 3 sets of 20 reps\n  * Bicycle Crunches: 3 sets of 20 reps\n  * Burpees: 3 sets of 10 reps\n  * Farmer's Carry: 4 sets of 50m\n- Cooldown (5 mins): Cobra stretch, child's pose.\n\n### Day 7: Full Rest & Nutrition Prep\n- Rest day. Hydrate with electrolytes and prepare whole-food meals for the upcoming week.",
+      "updated_plan": null,
+      "nutrition_tip": "Target a modest caloric deficit of 350–500 kcal below maintenance. Focus on high-satiety fiber (green vegetables, legumes, berries) paired with lean protein to maintain lean muscle mass while torching body fat.",
+      "feedback_history": [],
+      "created_at": "2026-09-30T02:34:00.814Z",
+      "updated_at": "2026-09-30T02:34:00.814Z"
+    }
+  ]
+}
