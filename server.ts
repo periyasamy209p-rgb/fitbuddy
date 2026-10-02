@@ -8,12 +8,6 @@ import { createServer as createViteServer } from 'vite';
 import { WebSocketServer, WebSocket } from 'ws';
 import { Modality, LiveServerMessage } from '@google/genai';
 import {
-  createSessionToken,
-  isAuthConfigured,
-  isAuthenticatedRequest,
-  verifyAuthToken,
-} from './server/auth.ts';
-import {
   save_user,
   save_plan,
   update_plan,
@@ -66,50 +60,6 @@ async function startServer() {
   app.use((req, res, next) => {
     if (req.path.startsWith('/api')) {
       console.log(`[API] ${req.method} ${req.path}`);
-    }
-    next();
-  });
-
-  app.post('/api/auth/login', (req: Request, res: Response) => {
-    res.setHeader('Cache-Control', 'no-store');
-    if (!isAuthConfigured()) {
-      return res.status(503).json({ error: 'Authentication is not configured on this server.' });
-    }
-    if (!verifyAuthToken(req.body?.token)) {
-      return res.status(401).json({ error: 'Invalid access token.' });
-    }
-
-    const secureCookie = process.env.NODE_ENV === 'production' ? '; Secure' : '';
-    res.setHeader(
-      'Set-Cookie',
-      `fitbuddy_session=${createSessionToken()}; Path=/; HttpOnly; SameSite=Strict; Max-Age=43200${secureCookie}`
-    );
-    return res.json({ authenticated: true });
-  });
-
-  app.get('/api/auth/session', (req: Request, res: Response) => {
-    res.setHeader('Cache-Control', 'no-store');
-    if (!isAuthConfigured()) {
-      return res.status(503).json({ error: 'Authentication is not configured on this server.' });
-    }
-    return res.json({ authenticated: isAuthenticatedRequest(req) });
-  });
-
-  app.post('/api/auth/logout', (_req: Request, res: Response) => {
-    const secureCookie = process.env.NODE_ENV === 'production' ? '; Secure' : '';
-    res.setHeader(
-      'Set-Cookie',
-      `fitbuddy_session=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0${secureCookie}`
-    );
-    return res.status(204).end();
-  });
-
-  app.use('/api', (req: Request, res: Response, next) => {
-    if (!isAuthConfigured()) {
-      return res.status(503).json({ error: 'Authentication is not configured on this server.' });
-    }
-    if (!isAuthenticatedRequest(req)) {
-      return res.status(401).json({ error: 'Authentication required.' });
     }
     next();
   });
@@ -368,12 +318,6 @@ async function startServer() {
   server.on('upgrade', (request, socket, head) => {
     const pathname = new URL(request.url || '/', 'http://localhost').pathname;
     if (pathname !== '/live-coach') return;
-
-    if (!isAuthConfigured() || !isAuthenticatedRequest(request)) {
-      socket.write('HTTP/1.1 401 Unauthorized\r\nConnection: close\r\n\r\n');
-      socket.destroy();
-      return;
-    }
 
     wss.handleUpgrade(request, socket, head, (clientWs) => {
       wss.emit('connection', clientWs, request);

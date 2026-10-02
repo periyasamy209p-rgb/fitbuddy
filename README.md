@@ -31,13 +31,7 @@ FitBuddy creates personalized seven-day workout plans, provides goal-specific nu
    bun install
    ```
 
-2. Copy `.env.example` to `.env`, set `GEMINI_API_KEY`, and replace `FITBUDDY_AUTH_TOKEN` with a generated secret.
-
-   Generate a strong token with:
-
-   ```sh
-   node --input-type=module -e "import { randomBytes } from 'node:crypto'; console.log(randomBytes(32).toString('base64url'))"
-   ```
+2. Copy `.env.example` to `.env` and set `GEMINI_API_KEY`.
 
 3. Start the app:
 
@@ -83,18 +77,15 @@ data/                App data files
 | Variable | Required | Description |
 | --- | --- | --- |
 | `GEMINI_API_KEY` | Yes | API key used by server-side Gemini features. |
-| `FITBUDDY_AUTH_TOKEN` | Yes | At least 32 characters; used to sign in and authorize direct API requests. |
 | `PORT` | No | HTTP port; defaults to `3000`. |
 | `DB_PATH` | No | SQLite database path; defaults to `./fitbuddy.db`. |
 
-The browser exchanges the access token for a 12-hour, signed, HttpOnly session cookie. Direct API clients must send `Authorization: Bearer <FITBUDDY_AUTH_TOKEN>`. The `/api/auth/login`, `/api/auth/session`, and `/api/auth/logout` routes are the public authentication bootstrap; other `/api/*` routes require authentication. The live-coach WebSocket also requires an authenticated session.
-
-Keep secrets in `.env` or your hosting provider's environment settings; never commit them or share your API key or access token. The `.env.example` file is safe to commit.
+Keep secrets in `.env` or your hosting provider's environment settings; never commit them or share your API key. The `.env.example` file is safe to commit.
 
 ## Deploy on Railway
 
 1. Push this repository to GitHub, then create a Railway project from the repository. Railway uses the included `railway.json` to build the frontend and start the server.
-2. In the Railway service, add `GEMINI_API_KEY`, a generated `FITBUDDY_AUTH_TOKEN`, and `NODE_ENV=production`.
+2. In the Railway service, add `GEMINI_API_KEY` and `NODE_ENV=production`.
 3. Add a Railway volume mounted at `/data`, then set `DB_PATH` to `/data/fitbuddy.db`. This keeps the SQLite database across deployments. The database download endpoint uses the same configured path.
 4. Deploy the service. Railway provides the `PORT` value automatically.
 

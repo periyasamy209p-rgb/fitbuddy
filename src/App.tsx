@@ -7,12 +7,9 @@ import { ApiDocsModal } from './components/ApiDocsModal';
 import { QuickDemoModal } from './components/QuickDemoModal';
 import { LiveVoiceCoachModal } from './components/LiveVoiceCoachModal';
 import { SearchGroundingModal } from './components/SearchGroundingModal';
-import { SignInScreen } from './components/SignInScreen';
 import { UserProfile, WorkoutPlanData } from './types';
 
 export default function App() {
-  const [authState, setAuthState] = useState<'checking' | 'authenticated' | 'unauthenticated'>('checking');
-  const [authError, setAuthError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'generator' | 'plan' | 'admin' | 'api'>('generator');
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
   const [currentPlan, setCurrentPlan] = useState<WorkoutPlanData | null>(null);
@@ -22,32 +19,6 @@ export default function App() {
   const [isSearchGroundingOpen, setIsSearchGroundingOpen] = useState(false);
 
   useEffect(() => {
-    let isMounted = true;
-
-    async function checkSession() {
-      try {
-        const response = await fetch('/api/auth/session', { cache: 'no-store' });
-        const data = await response.json();
-        if (!response.ok) throw new Error(data.error || 'Unable to verify your session.');
-        if (isMounted) setAuthState(data.authenticated ? 'authenticated' : 'unauthenticated');
-      } catch (error) {
-        if (isMounted) {
-          setAuthError(error instanceof Error ? error.message : 'Unable to verify your session.');
-          setAuthState('unauthenticated');
-        }
-      }
-    }
-
-    void checkSession();
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
-  // Load initial demo user (Shreya Patel - #101) directly from SQLite database
-  useEffect(() => {
-    if (authState !== 'authenticated') return;
-
     // Check if ?coach=true or #coach is passed in URL
     const params = new URLSearchParams(window.location.search);
     if (params.get('coach') === 'true' || window.location.hash === '#coach') {
@@ -69,22 +40,7 @@ export default function App() {
       }
     }
     loadInitialPlan();
-  }, [authState]);
-
-  const handleAuthenticated = () => {
-    setAuthError(null);
-    setAuthState('authenticated');
-  };
-
-  const handleSignOut = async () => {
-    try {
-      await fetch('/api/auth/logout', { method: 'POST' });
-    } finally {
-      setCurrentUser(null);
-      setCurrentPlan(null);
-      setAuthState('unauthenticated');
-    }
-  };
+  }, []);
 
   const handlePlanGenerated = (user: UserProfile, plan: WorkoutPlanData) => {
     setCurrentUser(user);
@@ -122,18 +78,6 @@ export default function App() {
     setActiveTab('generator');
   };
 
-  if (authState === 'checking') {
-    return (
-      <div className="min-h-screen bg-[#080b11] text-slate-100 flex items-center justify-center">
-        <p className="text-sm text-slate-400">Checking session...</p>
-      </div>
-    );
-  }
-
-  if (authState === 'unauthenticated') {
-    return <SignInScreen onAuthenticated={handleAuthenticated} initialError={authError} />;
-  }
-
   return (
     <div className="min-h-screen bg-[#080b11] text-slate-100 flex flex-col font-sans selection:bg-amber-400/20 selection:text-amber-200">
       <Navbar
@@ -144,7 +88,6 @@ export default function App() {
         onOpenQuickDemo={() => setIsDemoModalOpen(true)}
         onOpenLiveCoach={() => setIsLiveCoachOpen(true)}
         onOpenSearchGrounding={() => setIsSearchGroundingOpen(true)}
-        onSignOut={handleSignOut}
       />
 
       <main className="flex-1">

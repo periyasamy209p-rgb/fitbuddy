@@ -111,7 +111,7 @@ export const ApiDocsModal: React.FC = () => {
   const copyCurl = () => {
     let curl = `curl -X ${selectedEndpoint.method} "http://localhost:3000${selectedEndpoint.path}${
       selectedEndpoint.method === 'GET' && queryInput ? `?${queryInput}` : ''
-    }" \\\n+  -H "Authorization: Bearer YOUR_FITBUDDY_AUTH_TOKEN"`;
+    }"`;
     if (selectedEndpoint.method === 'POST') {
       curl += ` \\\n  -H "Content-Type: application/json" \\\n  -d '${requestBodyInput.replace(/\n/g, '')}'`;
     }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dumbbell, Users, Terminal, PlusCircle, Mic, Globe, Menu, X, Sparkles, Activity, Database, LogOut } from 'lucide-react';
+import { Dumbbell, Users, Terminal, PlusCircle, Mic, Globe, Menu, X, Sparkles, Activity, Database } from 'lucide-react';
 
 interface NavbarProps {
   activeTab: 'generator' | 'plan' | 'admin' | 'api';
@@ -9,7 +9,6 @@ interface NavbarProps {
   onOpenQuickDemo: () => void;
   onOpenLiveCoach: () => void;
   onOpenSearchGrounding: () => void;
-  onSignOut: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -20,7 +19,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenQuickDemo,
   onOpenLiveCoach,
   onOpenSearchGrounding,
-  onSignOut,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -134,15 +132,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="hidden sm:inline">Create</span>
             </button>
 
-            <button
-              onClick={onSignOut}
-              title="Sign out"
-              aria-label="Sign out"
-              className="hidden md:flex h-9 w-9 items-center justify-center rounded-lg border border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white cursor-pointer"
-            >
-              <LogOut className="h-4 w-4" />
-            </button>
-
             {/* Mobile Menu Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -226,16 +215,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>Sample Athletes</span>
               </button>
             </div>
-            <button
-              onClick={() => {
-                onSignOut();
-                setMobileMenuOpen(false);
-              }}
-              className="w-full py-2 px-3 text-xs font-semibold text-slate-300 bg-slate-900 border border-slate-700 rounded-lg flex items-center justify-center gap-1.5"
-            >
-              <LogOut className="h-3.5 w-3.5" />
-              <span>Sign out</span>
-            </button>
           </div>
         )}
       </header>
